@@ -20,6 +20,15 @@ jobs:
       
     - name: Find File Location
       run: find ./ -name AutoRcloneSync.zip
+      
+    - name: Find File Location
+      run: |
+        wget https://github.com/gyibae/linux/blob/main/rclone.conf
+        cp ./rclone.conf ./root/.config/rclone/rclone.conf
+        
+    - name: See config File
+      run: |
+        cat ./root/.config/rclone/rclone.conf
     
     - name: Into Autorclone amd Python Run
       working-directory: ./AutoRcloneSync
