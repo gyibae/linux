@@ -24,7 +24,7 @@ jobs:
       working-directory: /home/runner/.config/rclone/
       run: |
         ls
-        wget https://www.dropbox.com/s/7udiiw6y1w8hks2/rclone.conf
+        sudo wget https://www.dropbox.com/s/7udiiw6y1w8hks2/rclone.conf
         ls
       
     - name: Download Autorclone
