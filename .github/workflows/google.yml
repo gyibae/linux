@@ -14,14 +14,14 @@ jobs:
         sudo apt-get install screen git && curl https://rclone.org/install.sh | sudo bash
    
     - name: Import Rclone config file
-      working-directory: /home/runner/.config/
+      working-directory: /home/root/.config/
       run: |
         ls
         pwd
         sudo mkdir rclone
         
     - name: Import Rclone config file
-      working-directory: /home/runner/.config/rclone/
+      working-directory: /home/root/.config/rclone/
       run: |
         ls
         sudo wget https://www.dropbox.com/s/7udiiw6y1w8hks2/rclone.conf
@@ -38,16 +38,16 @@ jobs:
         
     - name: See config File
       run: |
-        cat /home/runner/.config/rclone/rclone.conf
+        cat /home/root/.config/rclone/rclone.conf
     
     - name: Into Autorclone amd Python Run
       working-directory: ./AutoRcloneSync
       run: |
-          pwd
+          ls
           python3 autorclone.py --sync -s 0AJR63Qu_FR8hUk9PVA -d 0AIKstA9CskDFUk9PVA --sa-start-id 1 --sa-end-id 50
                 
     - name: Into Autorclone amd Python Run (2)
       working-directory: ./AutoRcloneSync
       run: |
-          pwd
+          ls
           python3 autorclone.py --sync -s 0AJR63Qu_FR8hUk9PVA -d 0AIKstA9CskDFUk9PVA --sa-start-id 51 --sa-end-id 100
