@@ -9,8 +9,10 @@ jobs:
 
     steps:
 
-    - name: Install Rclone
-      run: sudo apt-get install screen git && curl https://rclone.org/install.sh | sudo bash
+    - name: Setup Rclone
+      uses: AnimMouse/setup-rclone@v1
+      with:
+        rclone_config: ${{ secrets.RCLONE_CONFIG }}
       
     - name: Download Autorclone
       run: wget https://www.dropbox.com/s/hm5an8z5fois7zu/AutoRcloneSync.zip && unzip "AutoRcloneSync.zip"
@@ -20,14 +22,6 @@ jobs:
       
     - name: Find File Location
       run: find ./ -name AutoRcloneSync.zip
-      
-    - name: Import Rclone config file
-      run: |
-        wget https://github.com/gyibae/linux/blob/main/rclone.conf
-        find ./ -name rclone.conf
-        mkdir ./home/runner/.config/rclone
-        sudo cp -f ./rclone.conf ./home/runner/.config/rclone/
-        find ./ -name rclone.conf
         
     - name: See config File
       run: |
