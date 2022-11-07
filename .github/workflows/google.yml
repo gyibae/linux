@@ -15,12 +15,17 @@ jobs:
    
     - name: Import Rclone config file
       run: |
-        sudo mkdir ./home/runner/.config
-        sudo mkdir ./home/runner/.config/rclone
-        cd ./home/runner/.config/rclone/
+        cd ./home/runner/
+        ls
+        sudo mkdir ./.config
+        ls
+        cd ./.config
+        sudo mkdir ./rclone
+        cd ./rclone/
         ls
         wget https://github.com/gyibae/linux/blob/main/rclone.conf
         ls
+        pwd
           
     - name: Test Rclone by listing remotes
       run: rclone listremotes
