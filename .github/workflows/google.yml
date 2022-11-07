@@ -15,14 +15,14 @@ jobs:
    
     - name: Import Rclone config file
       run: |
-        cd ./home/runner/
+        cd ./home/root/
         ls
         sudo mkdir ./.config
         ls
         cd ./.config
         sudo mkdir ./rclone
-        cd ./rclone/
         ls
+        cd ./rclone/
         wget https://github.com/gyibae/linux/blob/main/rclone.conf
         ls
         pwd
