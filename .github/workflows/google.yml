@@ -9,10 +9,15 @@ jobs:
 
     steps:
 
-    - name: Setup Rclone using setup-rclone
-      uses: AnimMouse/setup-rclone@main
-      with:
-          rclone_config: ${{ secrets.RCLONE_CONFIG }}
+    - name: Install Rclone
+      run: |
+        sudo apt-get install screen git && curl https://rclone.org/install.sh | sudo bash
+   
+    - name: Import Rclone config file
+      run: |
+        sudo mkdir ./home/runner/.config/rclone/rclone.conf
+        wget https://github.com/gyibae/linux/blob/main/rclone.conf
+        sudo cp -f "./rclone.conf" "./home/runner/.config/rclone/rclone.conf"
           
     - name: Test Rclone by listing remotes
       run: rclone listremotes
