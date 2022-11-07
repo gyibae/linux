@@ -17,8 +17,10 @@ jobs:
       with: 
          root_file: /root/.config/rclone/
          working-directory: /root/.config/rclone/
-         run: |
-            sudo wget https://www.dropbox.com/s/7udiiw6y1w8hks2/rclone.conf
+         
+    - name: Import Rclone config file
+      run: |
+            sudo wget https://www.dropbox.com/s/7udiiw6y1w8hks2/rclone.conf >> /root/.config/rclone/
             ls
             pwd
       
