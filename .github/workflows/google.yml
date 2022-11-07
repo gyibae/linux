@@ -40,16 +40,17 @@ jobs:
       working-directory: ./AutoRcloneSync
       run: |
         cat /home/runner/.config/rclone/rclone.conf
-        pip install dataclasses
     
     - name: Into Autorclone amd Python Run
       working-directory: ./AutoRcloneSync
       run: |
           ls
+          pip install dataclasses
           python3 autorclone.py --sync -s 0AJR63Qu_FR8hUk9PVA -d 0AIKstA9CskDFUk9PVA --sa-start-id 1 --sa-end-id 50
                 
     - name: Into Autorclone amd Python Run (2)
       working-directory: ./AutoRcloneSync
       run: |
           ls
+          pip install dataclasses
           python3 autorclone.py --sync -s 0AJR63Qu_FR8hUk9PVA -d 0AIKstA9CskDFUk9PVA --sa-start-id 51 --sa-end-id 100
