@@ -16,6 +16,8 @@ jobs:
     - name: Import Rclone config file
       working-directory: /home/runner/.config/rclone/
       run: |
+        ls
+        sudo rm -f -r rclone.conf
         wget https://github.com/gyibae/linux/blob/main/rclone.conf
         ls
         pwd
