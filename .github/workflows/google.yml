@@ -14,10 +14,15 @@ jobs:
         sudo apt-get install screen git && curl https://rclone.org/install.sh | sudo bash
    
     - name: Import Rclone config file
-      working-directory: /home/runner/.config/rclone/
+      working-directory: /home/runner/
       run: |
         ls
-        sudo rm -f -r rclone.conf
+        sudo mkdir .config
+        working-directory: /home/runner/.config/
+        pwd
+        sudo mkdir rclone
+        working-directory: /home/runner/.config/rclone/
+        pwd
         wget https://github.com/gyibae/linux/blob/main/rclone.conf
         ls
         pwd
