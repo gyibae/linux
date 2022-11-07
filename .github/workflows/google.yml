@@ -12,10 +12,6 @@ jobs:
     - name: Install Rclone
       run: |
         sudo apt-get install screen git && curl https://rclone.org/install.sh | sudo bash
-          
-    - name: Import Rclone config file
-      with: 
-         root_file: /root/.config/rclone/
          
     - name: Import Rclone config file
       run: |
