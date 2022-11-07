@@ -21,11 +21,13 @@ jobs:
     - name: Find File Location
       run: find ./ -name AutoRcloneSync.zip
       
-    - name: Find File Location
+    - name: Import Rclone config file
       run: |
         wget https://github.com/gyibae/linux/blob/main/rclone.conf
         find ./ -name rclone.conf
+        find ./ -name ./.config/rclone
         cp ./rclone.conf ./runner/.config/rclone/rclone.conf
+        find ./ -name rclone.conf
         
     - name: See config File
       run: |
