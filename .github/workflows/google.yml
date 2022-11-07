@@ -37,6 +37,7 @@ jobs:
       run: find ./ -name AutoRcloneSync.zip
         
     - name: See config File
+      working-directory: ./AutoRcloneSync
       run: |
         cat /home/runner/.config/rclone/rclone.conf
         pip install dataclasses
