@@ -16,7 +16,6 @@ jobs:
     - name: Import Rclone config file
       with: 
          root_file: /root/.config/rclone/
-         working-directory: /root/.config/rclone/
          
     - name: Import Rclone config file
       run: |
