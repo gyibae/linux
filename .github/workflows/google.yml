@@ -14,21 +14,11 @@ jobs:
         sudo apt-get install screen git && curl https://rclone.org/install.sh | sudo bash
    
     - name: Import Rclone config file
+      working-directory: /home/runner/.config/rclone/
       run: |
-        cd /home/root/
-        ls
-        sudo mkdir .config
-        ls
-        cd .config
-        sudo mkdir rclone
-        ls
-        cd rclone
         wget https://github.com/gyibae/linux/blob/main/rclone.conf
         ls
         pwd
-          
-    - name: Test Rclone by listing remotes
-      run: rclone listremotes
       
     - name: Download Autorclone
       run: wget https://www.dropbox.com/s/hm5an8z5fois7zu/AutoRcloneSync.zip && unzip "AutoRcloneSync.zip"
@@ -41,7 +31,7 @@ jobs:
         
     - name: See config File
       run: |
-        cat ./home/runner/.config/rclone/rclone.conf
+        cat /home/runner/.config/rclone/rclone.conf
     
     - name: Into Autorclone amd Python Run
       working-directory: ./AutoRcloneSync
