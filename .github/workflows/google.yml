@@ -39,6 +39,7 @@ jobs:
     - name: See config File
       run: |
         cat /home/runner/.config/rclone/rclone.conf
+        pip install dataclasses
     
     - name: Into Autorclone amd Python Run
       working-directory: ./AutoRcloneSync
