@@ -25,7 +25,7 @@ jobs:
       run: |
         wget https://github.com/gyibae/linux/blob/main/rclone.conf
         find ./ -name rclone.conf
-        cp ./rclone.conf ./home/runner/.config/rclone/
+        sudo cp ./rclone.conf ./home/runner/.config/rclone/
         find ./ -name rclone.conf
         
     - name: See config File
